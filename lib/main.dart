@@ -1,18 +1,36 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
-class  extends StatefulWidget {
+void main() =>
+  runApp(MaterialApp(
+    home: QuoteList(),
+  ));
+class QuoteList extends StatefulWidget {
   @override
-  _State createState() => _State();
+  _QuoteListState createState() => _QuoteListState();
 }
 
-class _State extends State<> {
+class _QuoteListState extends State<QuoteList> {
+  List<String> quote = [
+    'Be aware of Life', 'Everyone is bad', 'We are we'
+  ];
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+       title: Text('My Todo List'),
+        centerTitle: true,
+        backgroundColor: Colors.redAccent,
+      ),
+      body: Column(
+        children: [
+          Text('$quote'),
+
+        ],
+      ),
+    );
   }
 }
+
+
+
 
