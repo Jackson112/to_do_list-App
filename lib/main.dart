@@ -16,6 +16,7 @@ class _QuoteListState extends State<QuoteList> {
     Quote(author: 'Smart', text:'My name is Smart'),
     Quote(author: 'Cuthbert', text:'My name is Cuthbert'),
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
