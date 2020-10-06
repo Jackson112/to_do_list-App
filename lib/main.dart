@@ -22,10 +22,7 @@ class _QuoteListState extends State<QuoteList> {
         backgroundColor: Colors.redAccent,
       ),
       body: Column(
-        children: [
-          Text('$quote'),
-
-        ],
+        children: quote.map((quote) => Text(quote)).toList(),
       ),
     );
   }
