@@ -12,14 +12,12 @@ class QuoteList extends StatefulWidget {
 }
 
 class _QuoteListState extends State<QuoteList> {
-  List<Quote> quote = [
+  List<Quote> quotes = [
     Quote(author: 'Jackson', text:'My name is jackson'),
     Quote(author: 'Smart', text:'My name is Smart'),
     Quote(author: 'Cuthbert', text:'My name is Cuthbert'),
   ];
-   Widget quoteTemplate(quote){
-     return QuoteCard(quote: quote);
-   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +27,14 @@ class _QuoteListState extends State<QuoteList> {
         backgroundColor: Colors.redAccent,
       ),
       body: Column(
-        children: quote.map((quote) => quoteTemplate(quote)).toList(),
+        children: quotes.map((quote) => QuoteCard(
+          quote: quote,
+          delete: () {
+            setState((){
+              quotes.remove(quote);
+            });
+          }
+        )).toList(),
       ),
     );
   }
